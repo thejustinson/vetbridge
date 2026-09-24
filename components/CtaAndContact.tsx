@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 const MAP_SRC = "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d991.1835008143098!2d5.599910269447162!3d6.428209332271363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMjUnNDEuNiJOIDXCsDM2JzAyLjAiRQ!5e0!3m2!1sen!2sng!4v1790260853592!5m2!1sen!2sng";
 
 interface CtaAndContactProps {
@@ -8,7 +10,13 @@ interface CtaAndContactProps {
 
 function ContactCard() {
   return (
-    <div className="bg-[#0a3d1f] rounded-[28px] p-6 sm:p-8 space-y-5 w-full max-w-[300px]">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.5 }}
+      className="bg-[#0a3d1f] rounded-[28px] p-6 sm:p-8 space-y-5 w-full max-w-[320px] shadow-sm"
+    >
       <div>
         <p className="text-[10px] font-bold uppercase tracking-widest text-white/40">
           Get in Touch
@@ -61,22 +69,24 @@ function ContactCard() {
         </div>
       </div>
 
-      <a
+      <motion.a
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
         href="https://wa.me/2348000000000?text=Hello%20VetBridge%2C%20I%20need%20veterinary%20diagnostic%20assistance."
         target="_blank"
         rel="noopener noreferrer"
-        className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-full bg-[#0DA191] hover:bg-white hover:text-[#0a3d1f] text-white text-sm font-bold transition-colors"
+        className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-full bg-[#0DA191] hover:bg-white hover:text-[#0a3d1f] text-white text-sm font-bold transition-colors shadow-xs"
       >
-        <i className="ri-whatsapp-line" />
+        <i className="ri-whatsapp-line text-base" />
         Message Us on WhatsApp
-      </a>
-    </div>
+      </motion.a>
+    </motion.div>
   );
 }
 
 export default function CtaAndContact(_props: CtaAndContactProps) {
   return (
-    <section id="contact">
+    <section id="contact" className="overflow-hidden">
 
       {/* ── MOBILE — card on top, map below ── */}
       <div className="md:hidden bg-[#FAF9F5] px-4 py-10 flex justify-center">

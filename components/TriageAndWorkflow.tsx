@@ -1,11 +1,13 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 const steps = [
-  { num: "01", title: "Tell us what's happening",  desc: "Share symptoms via WhatsApp or phone." },
-  { num: "02", title: "Veterinary assessment",     desc: "A VetBridge doctor evaluates the case." },
-  { num: "03", title: "Sample guidance",           desc: "Instructions on preservation and transit." },
-  { num: "04", title: "Laboratory testing",        desc: "Testing performed in our accredited laboratory." },
-  { num: "05", title: "Results & explanation",     desc: "Digital results explained by our team." },
+  { num: "01", title: "Tell us what's happening", desc: "Share symptoms via WhatsApp or phone." },
+  { num: "02", title: "Veterinary assessment", desc: "A VetBridge doctor evaluates the case." },
+  { num: "03", title: "Sample guidance", desc: "Instructions on preservation and transit." },
+  { num: "04", title: "Laboratory testing", desc: "Testing performed in our accredited laboratory." },
+  { num: "05", title: "Results & explanation", desc: "Digital results explained by our team." },
 ];
 
 export default function TriageAndWorkflow() {
@@ -15,7 +17,13 @@ export default function TriageAndWorkflow() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
 
           {/* LEFT */}
-          <div className="space-y-6">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.5 }}
+            className="space-y-6"
+          >
             <p className="text-xs font-bold uppercase tracking-widest text-white/60">
               How It Works
             </p>
@@ -27,22 +35,28 @@ export default function TriageAndWorkflow() {
             <p className="text-sm text-white/70 leading-relaxed max-w-xs font-normal">
               Tell us what&apos;s happening. We&apos;ll guide you to the right test and result.
             </p>
-            <a
+            <motion.a
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
               href="https://wa.me/2348000000000?text=Hello%20VetBridge%20Veterinary%20Team%2C%20I%20need%20diagnostic%20guidance."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0a3d1f] hover:bg-white hover:text-[#0a3d1f] text-white text-sm font-bold transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0a3d1f] hover:bg-white hover:text-[#0a3d1f] text-white text-sm font-bold transition-colors shadow-xs"
             >
               <i className="ri-whatsapp-line" />
               Start on WhatsApp
-            </a>
-          </div>
+            </motion.a>
+          </motion.div>
 
-          {/* RIGHT — numbered steps */}
+          {/* RIGHT — numbered steps with staggered reveal */}
           <div className="space-y-0">
             {steps.map((step, idx) => (
-              <div
+              <motion.div
                 key={step.num}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-30px" }}
+                transition={{ duration: 0.4, delay: idx * 0.08 }}
                 className={`flex items-start gap-4 py-4 ${
                   idx < steps.length - 1 ? "border-b border-white/20" : ""
                 }`}
@@ -52,9 +66,9 @@ export default function TriageAndWorkflow() {
                 </span>
                 <div>
                   <p className="text-sm font-bold text-white leading-snug">{step.title}</p>
-                  <p className="text-xs text-white/60 mt-0.5">{step.desc}</p>
+                  <p className="text-xs text-white/65 mt-0.5">{step.desc}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 

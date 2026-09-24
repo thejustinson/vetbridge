@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 const pillars = [
   {
     icon: "ri-focus-3-line",
@@ -30,13 +32,19 @@ const pillars = [
 
 export default function WhyAndAbout() {
   return (
-    <section id="about" className="bg-white py-16 md:py-24">
+    <section id="about" className="bg-white py-16 md:py-24 overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
 
           {/* Heading */}
-          <div className="space-y-3">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.5 }}
+            className="space-y-3 md:sticky md:top-28"
+          >
             <p className="text-xs font-bold uppercase tracking-widest text-[#0DA191]">
               Why VetBridge
             </p>
@@ -45,25 +53,34 @@ export default function WhyAndAbout() {
               A partner in<br />
               <span className="text-[#0DA191]">animal health.</span>
             </h2>
-          </div>
+            <p className="text-sm text-[#181D61]/65 max-w-sm pt-2 font-normal leading-relaxed">
+              We combine accredited laboratory rigor with accessible veterinary support to elevate livestock and companion care nationwide.
+            </p>
+          </motion.div>
 
           {/* Pillars */}
           <div className="space-y-0">
             {pillars.map((p, idx) => (
-              <div
+              <motion.div
                 key={p.title}
-                className={`flex items-start gap-4 py-5 ${
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-30px" }}
+                transition={{ duration: 0.45, delay: idx * 0.08 }}
+                className={`group flex items-start gap-4 py-5 ${
                   idx < pillars.length - 1 ? "border-b border-[#181D61]/8" : ""
                 }`}
               >
-                <div className="w-8 h-8 rounded-full bg-[#FAF9F5] border border-[#181D61]/10 flex items-center justify-center text-[#0DA191] text-sm shrink-0 mt-0.5">
+                <div className="w-8 h-8 rounded-full bg-[#FAF9F5] border border-[#181D61]/10 flex items-center justify-center text-[#0DA191] text-sm shrink-0 mt-0.5 group-hover:bg-[#0DA191] group-hover:text-white transition-colors">
                   <i className={p.icon} />
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-[#181D61]">{p.title}</p>
-                  <p className="text-xs text-[#181D61]/55 leading-relaxed mt-0.5">{p.desc}</p>
+                  <p className="text-sm font-bold text-[#181D61] group-hover:text-[#0DA191] transition-colors">
+                    {p.title}
+                  </p>
+                  <p className="text-xs text-[#181D61]/60 leading-relaxed mt-0.5">{p.desc}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
