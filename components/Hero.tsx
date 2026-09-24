@@ -6,9 +6,8 @@ import { motion } from "framer-motion";
 export default function Hero() {
   return (
     <section className="bg-[#FAF9F5] pt-10 pb-16 md:pt-16 md:pb-24 overflow-hidden">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 space-y-10 md:space-y-12">
-
-        {/* ── CENTERED HERO HEADER ─────────────────── */}
+      {/* ── CENTERED HERO HEADER ─────────────────── */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 mb-10 md:mb-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -55,21 +54,24 @@ export default function Hero() {
             </motion.a>
           </div>
         </motion.div>
+      </div>
 
-        {/* ── VISUAL BLOCK ───────────────────────────────────────────────
-            Mobile: 2 images side-by-side with no spaces + card full-width directly under with no space
-            Desktop: 3-column row with gap-5 and individual squircles
-        ─────────────────────────────────────────────────────────────── */}
+      {/* ── VISUAL BLOCK ───────────────────────────────────────────────
+          Mobile: Full screen edge-to-edge width (0px margin, 0px border-radius, 0 border lines)
+                  Images side-by-side (50% each), Card directly under (100% width), 0 gap
+          Desktop: 3-column row inside max-w-5xl container with gap-5 and rounded-[32px]
+      ─────────────────────────────────────────────────────────────── */}
+      <div className="w-full md:max-w-5xl md:mx-auto md:px-6 mb-10 md:mb-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-          className="rounded-[32px] overflow-hidden border-2 border-[#181D61] md:border-0 md:rounded-none md:overflow-visible"
+          className="w-full"
         >
           <div className="grid grid-cols-2 md:grid-cols-3 gap-0 md:gap-5">
 
-            {/* Image 1: Flock / Livestock Photography */}
-            <div className="relative h-[210px] sm:h-[260px] md:h-[420px] bg-slate-100 overflow-hidden border-r border-[#181D61]/15 md:border-r-0 md:rounded-[32px] md:border md:border-[#181D61]/10">
+            {/* Image 1: Flock / Livestock Photography (50% on mobile, edge-to-edge, no border, no radius) */}
+            <div className="col-span-1 h-[220px] sm:h-[280px] md:h-[420px] relative overflow-hidden bg-slate-100 rounded-none md:rounded-[32px] border-0 md:border md:border-[#181D61]/10">
               <Image
                 src="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&w=800&q=80"
                 alt="Flock and livestock health"
@@ -80,8 +82,8 @@ export default function Hero() {
               />
             </div>
 
-            {/* Image 2: Clinical Doctor / Veterinary Specialist */}
-            <div className="relative h-[210px] sm:h-[260px] md:h-[420px] bg-slate-100 overflow-hidden md:rounded-[32px] md:border md:border-[#181D61]/10">
+            {/* Image 2: Clinical Doctor / Veterinary Specialist (50% on mobile, edge-to-edge, no border, no radius) */}
+            <div className="col-span-1 h-[220px] sm:h-[280px] md:h-[420px] relative overflow-hidden bg-slate-100 rounded-none md:rounded-[32px] border-0 md:border md:border-[#181D61]/10">
               <Image
                 src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80"
                 alt="Veterinary clinical and laboratory doctor"
@@ -92,8 +94,8 @@ export default function Hero() {
               />
             </div>
 
-            {/* Card 3: Personalized Animal Care Feature Card */}
-            <div className="col-span-2 md:col-span-1 relative min-h-[290px] md:h-[420px] bg-[#181D61] text-white p-6 sm:p-8 flex flex-col justify-between overflow-hidden border-t-2 border-[#181D61] md:border-t-0 md:border-2 md:border-[#181D61] md:rounded-[32px]">
+            {/* Card 3: Personalized Animal Care (100% full-width on mobile directly under, edge-to-edge, no border, no radius) */}
+            <div className="col-span-2 md:col-span-1 w-full relative min-h-[280px] md:h-[420px] bg-[#181D61] text-white p-6 sm:p-8 flex flex-col justify-between overflow-hidden rounded-none md:rounded-[32px] border-0 md:border-2 md:border-[#181D61]">
               <div className="relative z-10 space-y-2.5 sm:space-y-3">
                 <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-[#0DA191]">
                   Targeted Diagnostics
@@ -126,8 +128,10 @@ export default function Hero() {
 
           </div>
         </motion.div>
+      </div>
 
-        {/* ── TRUST STRIP ────────────────────────────────────────────── */}
+      {/* ── TRUST STRIP ────────────────────────────────────────────── */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -148,7 +152,6 @@ export default function Hero() {
             ))}
           </div>
         </motion.div>
-
       </div>
     </section>
   );
