@@ -1,0 +1,67 @@
+"use client";
+
+export default function Footer() {
+  return (
+    <footer className="bg-[#181D61] border-t border-white/8 py-10">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+
+          {/* Brand */}
+          <div className="space-y-1">
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 rounded-full bg-[#0DA191] text-white flex items-center justify-center text-xs font-bold">
+                <i className="ri-cross-fill" />
+              </div>
+              <span className="text-base font-extrabold tracking-tight text-white lowercase">
+                vetbridge
+              </span>
+            </div>
+            <p className="text-xs text-white/40 font-normal">
+              Nigeria
+            </p>
+          </div>
+
+          {/* Nav */}
+          <div className="flex flex-wrap items-center gap-5 text-xs font-bold text-white/50">
+            {[
+              { href: "#services",    label: "Services" },
+              { href: "#who-we-help", label: "Who we help" },
+              { href: "#how-it-works",label: "How it works" },
+              { href: "#contact",     label: "Contact" },
+            ].map((l) => (
+              <a key={l.href} href={l.href} className="hover:text-white transition-colors">
+                {l.label}
+              </a>
+            ))}
+          </div>
+
+          {/* Socials */}
+          <div className="flex items-center gap-2">
+            <a
+              href="https://wa.me/2348000000000"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+              className="w-8 h-8 rounded-full bg-white/8 hover:bg-[#0DA191] flex items-center justify-center text-white/60 hover:text-white text-sm transition-colors"
+            >
+              <i className="ri-whatsapp-line" />
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="w-8 h-8 rounded-full bg-white/8 hover:bg-[#0DA191] flex items-center justify-center text-white/60 hover:text-white text-sm transition-colors"
+            >
+              <i className="ri-instagram-line" />
+            </a>
+          </div>
+        </div>
+
+        <div className="mt-8 pt-5 border-t border-white/8 text-[11px] text-white/30">
+          © {new Date().getFullYear()} VetBridge Diagnostics. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  );
+}

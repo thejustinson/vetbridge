@@ -1,0 +1,83 @@
+@import "tailwindcss";
+@import "remixicon/fonts/remixicon.css";
+
+:root {
+  --vb-teal: #0DA191;
+  --vb-green: #249F45;
+  --vb-navy: #181D61;
+  --vb-bg: #FAF9F5;
+  --background: #FAF9F5;
+  --foreground: #181D61;
+}
+
+@theme inline {
+  --color-vb-teal: var(--vb-teal);
+  --color-vb-green: var(--vb-green);
+  --color-vb-navy: var(--vb-navy);
+  --color-vb-bg: var(--vb-bg);
+  --font-sans: var(--font-outfit);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--vb-bg);
+}
+
+body {
+  background-color: var(--vb-bg);
+  color: var(--vb-navy);
+  font-family: var(--font-outfit), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Squircle and clean border styles (NO SHADOWS) */
+.squircle {
+  border-radius: 28px;
+}
+
+.squircle-lg {
+  border-radius: 36px;
+}
+
+.squircle-sm {
+  border-radius: 20px;
+}
+
+/* Clean highlight accent underline */
+.sketch-highlight {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.sketch-highlight::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  bottom: 1px;
+  height: 6px;
+  background: #0DA191;
+  opacity: 0.3;
+  border-radius: 4px;
+  z-index: -1;
+  transform: rotate(-1deg);
+}
+
+/* Subtle border tokens */
+.border-navy-10 {
+  border-color: rgba(24, 29, 97, 0.1);
+}
+
+.border-navy-15 {
+  border-color: rgba(24, 29, 97, 0.15);
+}
+
+.border-teal-30 {
+  border-color: rgba(13, 161, 145, 0.3);
+}
+
+.border-green-30 {
+  border-color: rgba(36, 159, 69, 0.3);
+}
