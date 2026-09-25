@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-1">
             <div className="flex items-center gap-2.5">
-              <div className="relative w-8 h-8 rounded-full overflow-hidden shrink-0 border border-white/20">
+              <div className="relative w-9 h-9 rounded-full overflow-hidden shrink-0 border border-white/20">
                 <Image
                   src="/vetbridge.jpg"
                   alt="VetBridge Diagnostics Logo"
@@ -19,9 +19,14 @@ export default function Footer() {
                   className="object-cover"
                 />
               </div>
-              <span className="text-base font-extrabold tracking-tight text-white lowercase">
-                vetbridge
-              </span>
+              <div className="flex flex-col leading-none">
+                <span className="text-sm font-extrabold tracking-tight text-white lowercase leading-none">
+                  vetbridge
+                </span>
+                <span className="text-[10px] font-bold tracking-wider text-[#0DA191] lowercase leading-none mt-1">
+                  diagnostics
+                </span>
+              </div>
             </div>
             <p className="text-xs text-white/40 font-normal">
               Nigeria

@@ -34,7 +34,7 @@ export default function Header() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <a href="#" className="flex items-center gap-2.5 group">
-              <div className="relative w-8 h-8 rounded-full overflow-hidden shrink-0 border border-[#181D61]/15 transition-transform group-hover:scale-105">
+              <div className="relative w-9 h-9 rounded-full overflow-hidden shrink-0 border border-[#181D61]/15 transition-transform group-hover:scale-105">
                 <Image
                   src="/vetbridge.jpg"
                   alt="VetBridge Diagnostics Logo"
@@ -43,9 +43,14 @@ export default function Header() {
                   priority
                 />
               </div>
-              <span className="text-base font-extrabold tracking-tight text-[#181D61] lowercase">
-                vetbridge
-              </span>
+              <div className="flex flex-col leading-none">
+                <span className="text-sm font-extrabold tracking-tight text-[#181D61] lowercase leading-none">
+                  vetbridge
+                </span>
+                <span className="text-[10px] font-bold tracking-wider text-[#0DA191] lowercase leading-none mt-1">
+                  diagnostics
+                </span>
+              </div>
             </a>
 
             {/* Desktop Nav */}
@@ -108,7 +113,7 @@ export default function Header() {
                 onClick={() => setOpen(false)}
                 className="flex items-center gap-2.5"
               >
-                <div className="relative w-8 h-8 rounded-full overflow-hidden shrink-0 border border-[#181D61]/15">
+                <div className="relative w-9 h-9 rounded-full overflow-hidden shrink-0 border border-[#181D61]/15">
                   <Image
                     src="/vetbridge.jpg"
                     alt="VetBridge Diagnostics Logo"
@@ -116,9 +121,14 @@ export default function Header() {
                     className="object-cover"
                   />
                 </div>
-                <span className="text-lg font-black tracking-tight text-[#181D61] lowercase">
-                  vetbridge
-                </span>
+                <div className="flex flex-col leading-none">
+                  <span className="text-base font-black tracking-tight text-[#181D61] lowercase leading-none">
+                    vetbridge
+                  </span>
+                  <span className="text-[11px] font-bold tracking-wider text-[#0DA191] lowercase leading-none mt-1">
+                    diagnostics
+                  </span>
+                </div>
               </a>
 
               <button
