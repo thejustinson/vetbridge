@@ -11,12 +11,12 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-1">
             <div className="flex items-center gap-2.5">
-              <div className="relative w-9 h-9 rounded-full overflow-hidden shrink-0 border border-white/20">
+              <div className="relative w-9 h-9 rounded-full bg-white overflow-hidden shrink-0">
                 <Image
-                  src="/vetbridge.jpg"
+                  src="/vetbridge.png"
                   alt="VetBridge Diagnostics Logo"
                   fill
-                  className="object-cover"
+                  className="object-contain p-0.5"
                 />
               </div>
               <div className="flex flex-col leading-none">

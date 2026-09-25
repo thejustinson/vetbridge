@@ -34,12 +34,12 @@ export default function Header() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <a href="#" className="flex items-center gap-2.5 group">
-              <div className="relative w-9 h-9 rounded-full overflow-hidden shrink-0 border border-[#181D61]/15 transition-transform group-hover:scale-105">
+              <div className="relative w-9 h-9 rounded-full overflow-hidden shrink-0 transition-transform group-hover:scale-105">
                 <Image
-                  src="/vetbridge.jpg"
+                  src="/vetbridge.png"
                   alt="VetBridge Diagnostics Logo"
                   fill
-                  className="object-cover"
+                  className="object-contain"
                   priority
                 />
               </div>
@@ -113,12 +113,12 @@ export default function Header() {
                 onClick={() => setOpen(false)}
                 className="flex items-center gap-2.5"
               >
-                <div className="relative w-9 h-9 rounded-full overflow-hidden shrink-0 border border-[#181D61]/15">
+                <div className="relative w-9 h-9 rounded-full overflow-hidden shrink-0">
                   <Image
-                    src="/vetbridge.jpg"
+                    src="/vetbridge.png"
                     alt="VetBridge Diagnostics Logo"
                     fill
-                    className="object-cover"
+                    className="object-contain"
                   />
                 </div>
                 <div className="flex flex-col leading-none">

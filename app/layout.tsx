@@ -29,8 +29,8 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "VetBridge Diagnostics" }],
   icons: {
-    icon: "/vetbridge.jpg",
-    apple: "/vetbridge.jpg",
+    icon: "/vetbridge.png",
+    apple: "/vetbridge.png",
   },
   openGraph: {
     title: "VetBridge Diagnostics — Bridging the Gap in Animal Health",
