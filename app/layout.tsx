@@ -28,6 +28,10 @@ export const metadata: Metadata = {
     "Livestock Veterinary Diagnostics Edo State"
   ],
   authors: [{ name: "VetBridge Diagnostics" }],
+  icons: {
+    icon: "/vetbridge.jpg",
+    apple: "/vetbridge.jpg",
+  },
   openGraph: {
     title: "VetBridge Diagnostics — Bridging the Gap in Animal Health",
     description: "Veterinary diagnostic laboratory services, disease investigation, vaccine potency, and livestock support in Nigeria.",

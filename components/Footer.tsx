@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer className="bg-[#181D61] border-t border-white/8 py-10">
@@ -8,9 +10,14 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="space-y-1">
-            <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-full bg-[#0DA191] text-white flex items-center justify-center text-xs font-bold">
-                <i className="ri-cross-fill" />
+            <div className="flex items-center gap-2.5">
+              <div className="relative w-8 h-8 rounded-full overflow-hidden shrink-0 border border-white/20">
+                <Image
+                  src="/vetbridge.jpg"
+                  alt="VetBridge Diagnostics Logo"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <span className="text-base font-extrabold tracking-tight text-white lowercase">
                 vetbridge

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
@@ -32,9 +33,15 @@ export default function Header() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <a href="#" className="flex items-center gap-2 group">
-              <div className="w-8 h-8 rounded-full bg-[#0DA191] text-white flex items-center justify-center text-sm font-bold transition-transform group-hover:scale-105">
-                <i className="ri-cross-fill" />
+            <a href="#" className="flex items-center gap-2.5 group">
+              <div className="relative w-8 h-8 rounded-full overflow-hidden shrink-0 border border-[#181D61]/15 transition-transform group-hover:scale-105">
+                <Image
+                  src="/vetbridge.jpg"
+                  alt="VetBridge Diagnostics Logo"
+                  fill
+                  className="object-cover"
+                  priority
+                />
               </div>
               <span className="text-base font-extrabold tracking-tight text-[#181D61] lowercase">
                 vetbridge
@@ -99,10 +106,15 @@ export default function Header() {
               <a
                 href="#"
                 onClick={() => setOpen(false)}
-                className="flex items-center gap-2"
+                className="flex items-center gap-2.5"
               >
-                <div className="w-8 h-8 rounded-full bg-[#0DA191] text-white flex items-center justify-center text-sm font-bold">
-                  <i className="ri-cross-fill" />
+                <div className="relative w-8 h-8 rounded-full overflow-hidden shrink-0 border border-[#181D61]/15">
+                  <Image
+                    src="/vetbridge.jpg"
+                    alt="VetBridge Diagnostics Logo"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <span className="text-lg font-black tracking-tight text-[#181D61] lowercase">
                   vetbridge

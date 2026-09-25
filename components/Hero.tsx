@@ -70,11 +70,11 @@ export default function Hero() {
         >
           <div className="grid grid-cols-2 md:grid-cols-3 gap-0 md:gap-5">
 
-            {/* Image 1: Flock / Livestock Photography (50% on mobile, edge-to-edge, no border, no radius) */}
+            {/* Image 1: Farm Animals Photography (50% on mobile, edge-to-edge, no border, no radius) */}
             <div className="col-span-1 h-[220px] sm:h-[280px] md:h-[420px] relative overflow-hidden bg-slate-100 rounded-none md:rounded-[32px] border-0 md:border md:border-[#181D61]/10">
               <Image
-                src="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&w=800&q=80"
-                alt="Flock and livestock health"
+                src="/farm-animal.jpg"
+                alt="Farm livestock health and diagnostics"
                 fill
                 priority
                 sizes="(max-width: 768px) 50vw, 33vw"
@@ -85,8 +85,8 @@ export default function Hero() {
             {/* Image 2: Clinical Doctor / Veterinary Specialist (50% on mobile, edge-to-edge, no border, no radius) */}
             <div className="col-span-1 h-[220px] sm:h-[280px] md:h-[420px] relative overflow-hidden bg-slate-100 rounded-none md:rounded-[32px] border-0 md:border md:border-[#181D61]/10">
               <Image
-                src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80"
-                alt="Veterinary clinical and laboratory doctor"
+                src="/vet-with-pup.jpg"
+                alt="Veterinary clinical and laboratory doctor with patient"
                 fill
                 priority
                 sizes="(max-width: 768px) 50vw, 33vw"
