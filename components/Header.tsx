@@ -193,7 +193,7 @@ export default function Header() {
                     <i className="ri-whatsapp-line" />
                   </a>
                   <a
-                    href="https://instagram.com"
+                    href="https://www.instagram.com/vetbridgediagnostics"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-[#0DA191] text-base"

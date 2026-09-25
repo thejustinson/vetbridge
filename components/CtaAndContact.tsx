@@ -58,7 +58,7 @@ function ContactCard() {
               <i className="ri-whatsapp-line" /> WhatsApp
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/vetbridgediagnostics"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-white transition-colors flex items-center gap-1"

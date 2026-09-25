@@ -59,7 +59,7 @@ export default function Footer() {
               <i className="ri-whatsapp-line" />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/vetbridgediagnostics"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
